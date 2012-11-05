@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+var commander    = require('commander'),
+    itunesAPI    = require(__dirname + '/../lib/itunesAPI'),
+    formatResult = require(__dirname + '/../lib/formatResult');
+
+commander
+	.version(require(__dirname + '/../package').version)
+	.option(
+		'-t, --term <term>',
+		'The URL-encoded text string you want to search for.'
+	)
+	.option(
+		'-c, --country <code>',
+		'The two-letter country code for the store you want to search.',
+		'JP'
+	)
+	.parse(process.argv);
+
+itunesAPI.search({
+	term: commander.term || commander.args.pop(),
+	country: commander.country
+}, function (err, results) {
+	if (err) {
+		console.error(err);
+		return false;
+	}
+
+	results.forEach(function (result) {
+		console.log(formatResult(result));
+	});
+});
