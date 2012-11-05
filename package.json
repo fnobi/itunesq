@@ -1,0 +1,18 @@
+{
+  "author": "Shin Fujisawa <shin@fnobi.com>",
+  "name": "itunesq",
+  "description": "search iTunes store with API.",
+  "version": "0.0.1",
+  "repository": {
+    "url": "https://github.com/fnobi/itunesq.git"
+  },
+  "scripts": {
+    "test": "buster test"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
