@@ -9,7 +9,11 @@
   "scripts": {
     "test": "buster test"
   },
-  "dependencies": {},
+  "bin": "bin/itunesq",
+  "dependencies": {
+    "commander": "1.0.5",
+    "request": "2.11.4"
+  },
   "devDependencies": {},
   "optionalDependencies": {},
   "engines": {
